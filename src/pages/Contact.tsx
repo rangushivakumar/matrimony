@@ -1,4 +1,3 @@
-
 import { useEffect } from 'react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
@@ -13,9 +12,9 @@ const Contact = () => {
     <div className="min-h-screen bg-white">
       <Navbar />
       
-      <div className="container mx-auto py-12 px-4 mb-8">
+      <div className="container mx-auto py-12 px-4 mt-16">
         <h1 className="text-3xl font-bold text-center mb-8">
-          <span className="text-primary">Contact</span> <span className="text-secondary">Us</span>
+          <span className="text-[#00bcd4]">Contact</span> <span className="text-[#E91E63]">Us</span>
         </h1>
         
         <div className="max-w-3xl mx-auto text-center mb-12">

@@ -1,9 +1,8 @@
-
 import { useEffect, useState, useRef, useCallback } from 'react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import ProfileCard from '@/components/ProfileCard';
-import { useSearchParams, useLocation, Navigate } from 'react-router-dom';
+import { useSearchParams, useLocation } from 'react-router-dom';
 import { 
   Select, 
   SelectContent, 
@@ -19,9 +18,6 @@ import { dummyProfiles } from '../data/profiles';
 const PROFILES_PER_PAGE = 20;
 
 const Profiles = () => {
-  // Check if user is logged in
-  const isLoggedIn = localStorage.getItem('isLoggedIn') === 'true';
-  
   const [searchParams] = useSearchParams();
   const location = useLocation();
   const searchCriteria = location.state?.searchCriteria;
@@ -73,9 +69,6 @@ const Profiles = () => {
   const motherTongueOptions = ["Telugu", "Tamil", "Hindi", "Malayalam", "Kannada", "Bengali", "Marathi", "Gujarati"];
 
   useEffect(() => {
-    // If not logged in, this will redirect to login page
-    if (!isLoggedIn) return;
-    
     // Scroll to top when page loads
     window.scrollTo(0, 0);
     
@@ -120,7 +113,7 @@ const Profiles = () => {
       // Show filters automatically
       setShowFilters(true);
     }
-  }, [searchParams, searchCriteria, filterType, filterValue, isLoggedIn]);
+  }, [searchParams, searchCriteria, filterType, filterValue]);
 
   useEffect(() => {
     // Filter profiles based on selected criteria
@@ -180,11 +173,6 @@ const Profiles = () => {
     setHasMore(endIndex < filteredProfiles.length);
     setLoading(false);
   }, [filteredProfiles, page]);
-
-  // If not logged in, redirect to login
-  if (!isLoggedIn) {
-    return <Navigate to="/login" replace />;
-  }
 
   return (
     <div className="min-h-screen bg-gray-50 mt-16">

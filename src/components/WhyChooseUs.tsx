@@ -1,4 +1,3 @@
-
 import { useRef, useState, useEffect } from 'react';
 import { 
   CheckCircle, 
@@ -33,22 +32,22 @@ const WhyChooseUs = () => {
 
   const features = [
     {
-      icon: <CheckCircle className="h-12 w-12 text-gold" />,
+      icon: <CheckCircle className="h-12 w-12 text-[#00bcd4]" />,
       title: "High Success Rate",
       description: "Our platform has helped thousands of couples find their perfect life partners with a success rate of over 85%."
     },
     {
-      icon: <Shield className="h-12 w-12 text-gold" />,
+      icon: <Shield className="h-12 w-12 text-[#E91E63]" />,
       title: "Verified Profiles",
       description: "We verify all profiles to ensure authenticity and safety, giving you peace of mind during your search."
     },
     {
-      icon: <Search className="h-12 w-12 text-gold" />,
+      icon: <Search className="h-12 w-12 text-[#00bcd4]" />,
       title: "Comprehensive Matching",
       description: "Our advanced matching algorithm considers religion, caste, interests, and values for compatible matches."
     },
     {
-      icon: <Heart className="h-12 w-12 text-gold" />,
+      icon: <Heart className="h-12 w-12 text-[#E91E63]" />,
       title: "User-Friendly Experience",
       description: "Our intuitive interface makes it easy to find, connect, and communicate with potential matches."
     }
@@ -62,14 +61,14 @@ const WhyChooseUs = () => {
     >
       <div className="container mx-auto">
         <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">
-          Why Choose <span className="text-gold">KSR</span> <span className="text-maroon">Matrimony</span>
+          Why Choose <span className="text-[#00bcd4]">KSR</span> <span className="text-[#E91E63]">Matrimony</span>
         </h2>
         
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {features.map((feature, index) => (
             <div 
               key={index} 
-              className={`bg-white rounded-lg p-6 text-center shadow-md border border-gold/10 hover:shadow-lg transition-all duration-300 transform ${
+              className={`bg-white rounded-lg p-6 text-center shadow-md border border-[#00bcd4]/10 hover:shadow-lg transition-all duration-300 transform ${
                 isVisible ? 'animate-fade-in opacity-100' : 'opacity-0'
               }`}
               style={{ animationDelay: `${index * 0.15}s` }}
@@ -77,7 +76,7 @@ const WhyChooseUs = () => {
               <div className="flex justify-center mb-4">
                 {feature.icon}
               </div>
-              <h3 className="text-xl font-semibold mb-3 text-maroon">{feature.title}</h3>
+              <h3 className="text-xl font-semibold mb-3 text-[#E91E63]">{feature.title}</h3>
               <p className="text-gray-600">{feature.description}</p>
             </div>
           ))}

@@ -1,8 +1,8 @@
-
 import { useState, useEffect, useRef } from 'react';
 import { Button } from "@/components/ui/button";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { useIsMobile } from '@/hooks/use-mobile';
+import { useNavigate } from 'react-router-dom';
 
 interface Couple {
   id: number;
@@ -16,7 +16,7 @@ interface Couple {
 const couples: Couple[] = [
   {
     id: 1,
-    image: "https://images.unsplash.com/photo-1621874347142-f0faa5d578c7?q=80&w=2787&auto=format&fit=crop",
+    image: "https://cdn.pixabay.com/photo/2024/01/20/08/49/indian-8520596_1280.jpg",
     maleName: "Nitin",
     femaleName: "Karuna",
     location: "Delhi",
@@ -24,7 +24,7 @@ const couples: Couple[] = [
   },
   {
     id: 2,
-    image: "https://images.unsplash.com/photo-1591604466107-ec97de577aff?q=80&w=2787&auto=format&fit=crop",
+    image: "https://i.pinimg.com/236x/92/08/c1/9208c12f8d7b06a022670c4ba2ed0d9e.jpg",
     maleName: "Abhirav",
     femaleName: "Sakshi",
     location: "Mumbai",
@@ -32,7 +32,7 @@ const couples: Couple[] = [
   },
   {
     id: 3,
-    image: "https://images.unsplash.com/photo-1519123472359-4b1dc8534c7a?q=80&w=2794&auto=format&fit=crop",
+    image: "https://image.wedmegood.com/resized/450X/uploads/project/140983/1623774316_best_wedding_Photographers__73_.jpg",
     maleName: "Shivajey",
     femaleName: "Mitali",
     location: "Bangalore",
@@ -40,7 +40,7 @@ const couples: Couple[] = [
   },
   {
     id: 4,
-    image: "https://images.unsplash.com/photo-1622075361371-bffdc61aeeeb?q=80&w=3870&auto=format&fit=crop",
+    image: "https://cdn0.weddingwire.in/article/9610/original/1280/jpg/10169-indian-wedding-couple-images-allied-a-blushing-bride.jpeg",
     maleName: "Rahul",
     femaleName: "Priya",
     location: "Chennai",
@@ -48,7 +48,7 @@ const couples: Couple[] = [
   },
   {
     id: 5,
-    image: "https://images.unsplash.com/photo-1545232979-8bf68ee9b1af?q=80&w=3870&auto=format&fit=crop",
+    image: "https://www.redveds.com/wp-content/uploads/2023/10/DSC09925-scaled-2-1-9.jpeg",
     maleName: "Karan",
     femaleName: "Nisha",
     location: "Hyderabad",
@@ -56,7 +56,7 @@ const couples: Couple[] = [
   },
   {
     id: 6,
-    image: "https://images.unsplash.com/photo-1519741347686-c1e0aadf4611?q=80&w=3870&auto=format&fit=crop",
+    image: "https://d397bfy4gvgcdm.cloudfront.net/96811-32-IMG-1364-_id92467318.jpeg",
     maleName: "Vikram",
     femaleName: "Meera",
     location: "Delhi",
@@ -64,7 +64,7 @@ const couples: Couple[] = [
   },
   {
     id: 7,
-    image: "https://images.unsplash.com/photo-1490114538077-0a7f8cb49891?q=80&w=3870&auto=format&fit=crop",
+    image: "https://i.pinimg.com/474x/44/91/46/44914621643a3ad2be28fc9454521de0.jpg",
     maleName: "Arjun",
     femaleName: "Divya",
     location: "Mumbai",
@@ -72,7 +72,7 @@ const couples: Couple[] = [
   },
   {
     id: 8,
-    image: "https://images.unsplash.com/photo-1511285560929-80b456fea0bc?q=80&w=3869&auto=format&fit=crop",
+    image: "https://img.weddingbazaar.com/shaadisaga_production/photos/pictures/006/390/766/new_medium/305299834_1488410324913968_3507207750829364910_n.jpg?1680008663",
     maleName: "Rohan",
     femaleName: "Anjali",
     location: "Pune",
@@ -80,7 +80,7 @@ const couples: Couple[] = [
   },
   {
     id: 9,
-    image: "https://images.unsplash.com/photo-1522058691919-f7148bef4dfe?q=80&w=3456&auto=format&fit=crop",
+    image: "https://img.freepik.com/premium-photo/man-woman-are-walking-together-front-window_1113980-2362.jpg?semt=ais_hybrid&w=740",
     maleName: "Sanjay",
     femaleName: "Neha",
     location: "Jaipur",
@@ -88,7 +88,7 @@ const couples: Couple[] = [
   },
   {
     id: 10,
-    image: "https://images.unsplash.com/photo-1537633552985-df8429e8048b?q=80&w=3456&auto=format&fit=crop",
+    image: "https://i.pinimg.com/736x/47/e9/38/47e9381aba5d67a74b617c3a7509877a.jpg",
     maleName: "Aditya",
     femaleName: "Pooja",
     location: "Ahmedabad",
@@ -96,7 +96,7 @@ const couples: Couple[] = [
   },
   {
     id: 11,
-    image: "https://images.unsplash.com/photo-1623940389538-bb62c3ad9d35?q=80&w=3456&auto=format&fit=crop",
+    image: "https://i.pinimg.com/736x/12/36/af/1236af9af24b2dbfa32c8c51d15cc5c6.jpg",
     maleName: "Varun",
     femaleName: "Shreya",
     location: "Kolkata",
@@ -104,7 +104,7 @@ const couples: Couple[] = [
   },
   {
     id: 12,
-    image: "https://images.unsplash.com/photo-1595982828248-1cf19ce342bb?q=80&w=3456&auto=format&fit=crop",
+    image: "https://i.pinimg.com/736x/a1/3f/3e/a13f3e09fb2a0f35f83609806fb9e9fa.jpg",
     maleName: "Rajesh",
     femaleName: "Anita",
     location: "Lucknow",
@@ -118,6 +118,7 @@ const RecentClients = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
   const [activeDot, setActiveDot] = useState(0);
   const [currentSlide, setCurrentSlide] = useState(0);
+  const navigate = useNavigate();
   
   // Determine how many stories to show per slide based on screen size
   const storiesPerSlide = isMobile ? 1 : 3;
@@ -258,7 +259,10 @@ const RecentClients = () => {
       <div className="bg-[#E91E63] text-white py-10 mt-16">
         <div className="container mx-auto text-center">
           <p className="text-xl mb-4">Your story is waiting to happen!</p>
-          <Button className="bg-white text-[#E91E63] hover:bg-gray-100">
+          <Button 
+            className="bg-white text-[#E91E63] hover:bg-gray-100"
+            onClick={() => navigate('/contact')}
+          >
             Get Started
           </Button>
         </div>

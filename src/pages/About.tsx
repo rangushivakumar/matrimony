@@ -1,4 +1,3 @@
-
 import { useEffect } from 'react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
@@ -12,9 +11,9 @@ const About = () => {
     <div className="min-h-screen bg-white">
       <Navbar />
       
-      <div className="container mx-auto py-12 px-4">
+      <div className="container mx-auto py-12 px-4 mt-16">
         <h1 className="text-4xl md:text-5xl font-bold text-center mb-12">
-          <span className="text-gold">About</span> <span className="text-maroon">KSR Matrimony</span>
+          <span className="text-[#00bcd4]">About</span> <span className="text-[#E91E63]">KSR Matrimony</span>
         </h1>
         
         <div className="max-w-4xl mx-auto">
@@ -27,15 +26,15 @@ const About = () => {
           
           {/* Mission & Vision */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
-            <div className="bg-gold/10 p-6 rounded-lg">
-              <h2 className="text-2xl font-semibold mb-4 text-maroon">Our Mission</h2>
+            <div className="bg-[#00bcd4]/10 p-6 rounded-lg">
+              <h2 className="text-2xl font-semibold mb-4 text-[#E91E63]">Our Mission</h2>
               <p className="text-gray-700">
                 To provide a trusted platform where individuals can find their ideal life partner based on their preferences, values, and compatibility, leading to happy and fulfilling marriages.
               </p>
             </div>
             
-            <div className="bg-rose/10 p-6 rounded-lg">
-              <h2 className="text-2xl font-semibold mb-4 text-maroon">Our Vision</h2>
+            <div className="bg-[#E91E63]/10 p-6 rounded-lg">
+              <h2 className="text-2xl font-semibold mb-4 text-[#E91E63]">Our Vision</h2>
               <p className="text-gray-700">
                 To be the most trusted matrimonial service in India, known for our integrity, personalized matchmaking, and commitment to helping people find their perfect match.
               </p>
@@ -44,7 +43,7 @@ const About = () => {
           
           {/* Our Story */}
           <div className="mb-12">
-            <h2 className="text-3xl font-semibold mb-6 text-maroon">Our Story</h2>
+            <h2 className="text-3xl font-semibold mb-6 text-[#E91E63]">Our Story</h2>
             <div className="bg-white shadow-md rounded-lg overflow-hidden">
               <div className="grid grid-cols-1 md:grid-cols-2">
                 <div className="h-64 md:h-auto">
@@ -68,23 +67,23 @@ const About = () => {
           
           {/* Our Values */}
           <div className="mb-12">
-            <h2 className="text-3xl font-semibold mb-6 text-maroon">Our Values</h2>
+            <h2 className="text-3xl font-semibold mb-6 text-[#E91E63]">Our Values</h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              <div className="bg-white p-6 rounded-lg shadow-md border-l-4 border-gold">
+              <div className="bg-white p-6 rounded-lg shadow-md border-l-4 border-[#00bcd4]">
                 <h3 className="text-xl font-semibold mb-2">Trust</h3>
                 <p className="text-gray-700">
                   We verify all profiles to ensure authenticity and build trust among our users.
                 </p>
               </div>
               
-              <div className="bg-white p-6 rounded-lg shadow-md border-l-4 border-maroon">
+              <div className="bg-white p-6 rounded-lg shadow-md border-l-4 border-[#E91E63]">
                 <h3 className="text-xl font-semibold mb-2">Respect</h3>
                 <p className="text-gray-700">
                   We respect cultural values, preferences, and privacy of our members.
                 </p>
               </div>
               
-              <div className="bg-white p-6 rounded-lg shadow-md border-l-4 border-gold">
+              <div className="bg-white p-6 rounded-lg shadow-md border-l-4 border-[#00bcd4]">
                 <h3 className="text-xl font-semibold mb-2">Excellence</h3>
                 <p className="text-gray-700">
                   We strive for excellence in our service and customer support.
@@ -95,7 +94,7 @@ const About = () => {
           
           {/* Team */}
           <div>
-            <h2 className="text-3xl font-semibold mb-6 text-maroon">Our Team</h2>
+            <h2 className="text-3xl font-semibold mb-6 text-[#E91E63]">Our Team</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               <div className="bg-white rounded-lg overflow-hidden shadow-md">
                 <img 
@@ -105,7 +104,7 @@ const About = () => {
                 />
                 <div className="p-4">
                   <h3 className="text-xl font-semibold">K.S. Ranganathan</h3>
-                  <p className="text-gold">Founder & CEO</p>
+                  <p className="text-[#00bcd4]">Founder & CEO</p>
                 </div>
               </div>
               
@@ -117,7 +116,7 @@ const About = () => {
                 />
                 <div className="p-4">
                   <h3 className="text-xl font-semibold">Priya Sharma</h3>
-                  <p className="text-gold">Chief Matchmaker</p>
+                  <p className="text-[#00bcd4]">Chief Matchmaker</p>
                 </div>
               </div>
               
@@ -129,7 +128,7 @@ const About = () => {
                 />
                 <div className="p-4">
                   <h3 className="text-xl font-semibold">Raj Kumar</h3>
-                  <p className="text-gold">Customer Success Manager</p>
+                  <p className="text-[#00bcd4]">Customer Success Manager</p>
                 </div>
               </div>
             </div>

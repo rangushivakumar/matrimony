@@ -1,8 +1,5 @@
-
 import { useEffect } from 'react';
-import Navbar from '@/components/Navbar';
 import LoginModal from '@/components/LoginModal';
-import Footer from '@/components/Footer';
 
 const Login = () => {
   // Scroll to top when page loads
@@ -11,12 +8,10 @@ const Login = () => {
   }, []);
 
   return (
-    <div className="min-h-screen bg-[#f9fafb] mt-16">
-      <Navbar />
+    <div className="min-h-screen bg-[#f9fafb]">
       <div className="py-16">
         <LoginModal />
       </div>
-      <Footer />
     </div>
   );
 };
