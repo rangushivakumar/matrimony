@@ -16,7 +16,8 @@ const ContactUs = () => {
     number: '',
     age: '',
     gender: '',
-    message: ''
+    caste: '',
+    message: '',
   });
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
@@ -27,7 +28,7 @@ const ContactUs = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     
-    if (!formData.name || !formData.number || !formData.age || !formData.gender) {
+    if (!formData.name || !formData.number || !formData.age || !formData.gender || !formData.caste) {
       toast({
         title: "Missing Information",
         description: "Please fill all required fields",
@@ -79,6 +80,7 @@ const ContactUs = () => {
           number: formData.number,
           age: formData.age,
           gender: formData.gender,
+          caste: formData.caste,
           message: formData.message
         }),
       });
@@ -98,6 +100,7 @@ const ContactUs = () => {
         number: '',
         age: '',
         gender: '',
+        caste: '',
         message: ''
       });
     } catch (error) {
@@ -178,6 +181,39 @@ const ContactUs = () => {
                       <option value="Female">Female</option>
                     </select>
                   </div>
+                </div>
+
+                <div className="space-y-2">
+                  <Label htmlFor="caste">Caste</Label>
+                  <select
+                    id="caste"
+                    name="caste"
+                    className="w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
+                    value={formData.caste}
+                    onChange={handleChange}
+                    required
+                  >
+                    <option value="">Select caste</option>
+                    <option value="Goud">Goud</option>
+                    <option value="Besta">Besta – Fishermen</option>
+                    <option value="Yadav">Yadav / Golla</option>
+                    <option value="Mudiraj">Mudiraj / Mutrasi</option>
+                    <option value="Kamma">Kamma</option>
+                    <option value="Reddy">Reddy</option>
+                    <option value="Velama">Velama</option>
+                    <option value="Muslim">Muslim</option>
+                    <option value="Madiga Hindu">Madiga (Hindu)</option>
+                    <option value="Madiga Christian">Madiga (Christian)</option>
+                    <option value="Mala Hindu">Mala (Hindu)</option>
+                    <option value="Mala Christian">Mala (Christian)</option>
+                    <option value="Rajaka">Rajaka</option>
+                    <option value="Komatala">Komatala / Vysya</option>
+                    <option value="Perika">Perika</option>
+                    <option value="Mangali">Mangali</option>
+                    <option value="Padmashali">Padmashali</option>
+                    <option value="Munnur Kapu">Munnur Kapu</option>
+                    <option value="Kurma">Kurma</option>
+                  </select>
                 </div>
                 
                 <div className="space-y-2">

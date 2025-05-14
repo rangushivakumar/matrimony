@@ -1,22 +1,35 @@
-
 import { Link } from 'react-router-dom';
 import { Instagram, Facebook, Twitter, Mail, Phone } from 'lucide-react';
 
 const Footer = () => {
   const year = new Date().getFullYear();
   
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
+  const scrollToSuccessStories = () => {
+    const successStoriesSection = document.getElementById('success-stories');
+    if (successStoriesSection) {
+      successStoriesSection.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+  
   return (
     <footer className="bg-[#f8f8f8] text-gray-700">
-      <div className="container mx-auto py-12 px-4">
+      <div className="container mx-auto py-8 px-4">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {/* Quick Links */}
           <div>
             <h4 className="font-semibold text-primary mb-4">Quick Links</h4>
             <ul className="space-y-2">
               <li>
-                <Link to="/" className="text-gray-600 hover:text-primary transition-colors">
+                <button 
+                  onClick={scrollToTop}
+                  className="text-gray-600 hover:text-primary transition-colors cursor-pointer"
+                >
                   Home
-                </Link>
+                </button>
               </li>
               <li>
                 <Link to="/about" className="text-gray-600 hover:text-primary transition-colors">
@@ -24,15 +37,18 @@ const Footer = () => {
                 </Link>
               </li>
               <li>
-                <Link to="/success-stories" className="text-gray-600 hover:text-primary transition-colors">
+                <button 
+                  onClick={scrollToSuccessStories}
+                  className="text-gray-600 hover:text-primary transition-colors cursor-pointer"
+                >
                   Success Stories
-                </Link>
+                </button>
               </li>
-              <li>
+              {/* <li>
                 <Link to="/profiles" className="text-gray-600 hover:text-primary transition-colors">
                   Browse Profiles
                 </Link>
-              </li>
+              </li> */}
               <li>
                 <Link to="/contact" className="text-gray-600 hover:text-primary transition-colors">
                   Contact Us
@@ -101,7 +117,7 @@ const Footer = () => {
         </div>
         
         <div className="border-t border-gray-200 mt-8 pt-8 text-center text-gray-500 text-sm">
-          <div className="mb-4">
+          <div className="mb-2">
             <Link to="/terms" className="hover:text-primary transition-colors mx-2">
               Terms of Service
             </Link>

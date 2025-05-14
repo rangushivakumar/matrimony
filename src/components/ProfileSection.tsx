@@ -102,6 +102,7 @@ const ProfileSection = () => {
           console.log(response,'response')
           if (response.ok) {
             const data = await response.json();
+            console.log(data,'response')
             setProfiles(data.profiles);
             setMessage(data.message);
           } else {
@@ -131,11 +132,11 @@ const ProfileSection = () => {
   
 
   return (
-    <div className="py-12 px-4 bg-gray-50">
-      <div className="container mx-auto">
-        <h2 className="text-2xl font-semibold text-center mb-4 text-[#ff5252]">
+    <div className="py-12 px-4 bg-gray-50" id='profile-section'>
+      <h2 className="text-2xl font-semibold text-center mb-4 text-[#ff5252]">
           Featured Profiles
         </h2>
+      <div className="container mx-auto">
         <h6 className="font-semibold text-center mb-8 text-[#ff5252]">
           {message}
         </h6>

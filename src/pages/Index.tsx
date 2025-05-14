@@ -43,7 +43,9 @@ const Index = () => {
       <main>
         <Hero />
         <FeatureSteps />
-        <ProfileSection />
+        <div id="profiles-section">
+          <ProfileSection />
+        </div>
         <RecentClients />
         <WhyChooseUs />
       </main>

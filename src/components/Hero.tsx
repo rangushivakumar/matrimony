@@ -1,6 +1,8 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { Button } from "@/components/ui/button";
 import { Search } from "lucide-react";
+import ksrbanner from '../assets/ksrbanner.jpeg'
+
 
 const Hero = () => {
   const [showTitle, setShowTitle] = useState(false);
@@ -70,13 +72,24 @@ const Hero = () => {
   }, []);
 
   return (
-    <div className="relative min-h-[80vh] bg-[url('https://images.unsplash.com/photo-1505428215601-90f0007b9e83?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')] bg-cover bg-center flex flex-col items-center justify-center overflow-hidden px-4 py-16 before:content-[''] before:absolute before:inset-0 before:bg-black/60">
+    // <div className="relative min-h-[94vh] bg-[url('https://images.unsplash.com/photo-1505428215601-90f0007b9e83?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')] bg-cover bg-center flex flex-col items-center justify-center overflow-hidden px-4 py-16 before:content-[''] before:absolute before:inset-0 before:bg-black/60">
+
+
+
+    <div
+      className="relative min-h-[94vh] bg-cover bg-center flex flex-col items-center justify-center overflow-hidden px-4 py-16 before:content-[''] before:absolute before:inset-0 before:bg-black/60"
+      style={{
+        backgroundImage: `url(${ksrbanner})`,
+        backgroundSize: 'contain',
+      }}
+    >
+
+
       <div className="container mx-auto z-10 text-white">
         {/* Main title animation */}
         <div
-          className={`text-center mb-12 transition-all duration-1000 ease-in-out transform ${
-            showTitle ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-24'
-          }`}
+          className={`text-center mb-12 transition-all duration-1000 ease-in-out transform ${showTitle ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-24'
+            }`}
         >
           <h1 className="text-4xl md:text-5xl font-bold mb-4">
             KSR Matrimony
@@ -121,9 +134,8 @@ const Hero = () => {
 
         {/* Search Filters */}
         <div
-          className={`max-w-5xl mx-auto mt-8 transition-all duration-1000 transform ${
-            showSearchForm ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-24'
-          }`}
+          className={`max-w-5xl mx-auto mt-8 transition-all duration-1000 transform ${showSearchForm ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-24'
+            }`}
         >
           <h2 className="text-2xl md:text-3xl font-bold mb-6 text-center">Find Your Soulmate</h2>
           <form onSubmit={handleSearch}>
@@ -142,7 +154,7 @@ const Hero = () => {
                   </select>
                 </div>
               </div>
-              
+
               <div className="sm:col-span-2">
                 <div className="bg-white rounded-md p-1 text-xs text-gray-500">
                   <p className="mb-1 text-center">Aged</p>
@@ -167,7 +179,7 @@ const Hero = () => {
                   </div>
                 </div>
               </div>
-              
+
               <div className="sm:col-span-3">
                 <div className="bg-white rounded-md p-1 text-xs text-gray-500">
                   <p className="mb-1 text-center">Religion</p>
@@ -184,7 +196,7 @@ const Hero = () => {
                   </select>
                 </div>
               </div>
-              
+
               <div className="sm:col-span-3">
                 <div className="bg-white rounded-md p-1 text-xs text-gray-500">
                   <p className="mb-1 text-center">Community</p>
@@ -194,87 +206,56 @@ const Hero = () => {
                     value={searchCriteria.community}
                     onChange={handleInputChange}
                   >
-                    <option>BC-A (Munnur Kapu)</option>
-                    <option>BC-A (Goud)</option>
-                    <option>BC-A (Gangaputra / Jalari)</option>
-                    <option>BC-A (Kummari)</option>
-                    <option>BC-A (Vaddera)</option>
-                    <option>BC-A (Besta)</option>
-                    <option>BC-A (Are / Arey Kshatriya)</option>
-                    <option>BC-A (Kuruba)</option>
-                    <option>BC-A (Rajaka)</option>
-                    <option>BC-A (Kamsali)</option>
-                    <option>BC-A (Sagara / Uppara)</option>
-                    <option>BC-B (Patel)</option>
-                    <option>BC-B (Yadav / Golla)</option>
-                    <option>BC-B (Mudiraj / Mutrasi)</option>
-                    <option>BC-B (Goud)</option>
-                    <option>BC-B (Gandla)</option>
-                    <option>BC-B (Kuruma)</option>
-                    <option>BC-B (Koppula Velama)</option>
-                    <option>BC-B (Thogata Veera Kshatriya)</option>
-                    <option>BC-B (Are Katikam / Kapu)</option>
-                    <option>BC-C (Christian)</option>
-                    <option>BC-D (Kapu)</option>
-                    <option>BC-D (Telaga)</option>
-                    <option>BC-D (Balija)</option>
-                    <option>BC-D (Ontari)</option>
-                    <option>BC-D (Munnuru Kapu)</option>
-                    <option>BC-D (Kamma)</option>
-                    <option>BC-D (Reddy)</option>
-                    <option>BC-D (Velama)</option>
-                    <option>BC-E (Shaik)</option>
-                    <option>BC-E (Syed)</option>
-                    <option>BC-E (Moghal)</option>
-                    <option>BC-E (Pathan)</option>
-                    <option>BC-E (Qureshi / Butcher)</option>
-                    <option>BC-E (Labbi)</option>
-                    <option>BC-E (Mehtar)</option>
-                    <option>BC-E (Ansari)</option>
-                    <option>SC (Madiga)</option>
-                    <option>SC (Mala)</option>
-                    <option>SC (Relli)</option>
-                    <option>SC (Dommara / Dombar)</option>
-                    <option>SC (Chakkiliyan / Rajaka)</option>
-                    <option>SC (Pakir / Faqir)</option>
-                    <option>SC (Bindla)</option>
-                    <option>SC (Budaga Jangam)</option>
-                    <option>SC (Vamsha Raj)</option>
-                    <option>SC (Poosala)</option>
-                    <option>SC (Valluvan)</option>
-                    <option>SC (Boya)</option>
-                    <option>SC (Thoti)</option>
-                    <option>SC (Adi Andhra)</option>
-                    <option>SC (Adi Dravida)</option>
-                    <option>SC (Arunthathiyar)</option>
-                    <option>ST (Lambada / Banjara / Sugali)</option>
-                    <option>ST (Gond)</option>
-                    <option>ST (Koya)</option>
-                    <option>ST (Chenchu)</option>
-                    <option>ST (Yerukala)</option>
-                    <option>ST (Yanadi)</option>
-                    <option>ST (Konda Reddy)</option>
-                    <option>ST (Konda Dora)</option>
-                    <option>ST (Savara)</option>
-                    <option>ST (Jatapu)</option>
-                    <option>ST (Kammara)</option>
-                    <option>ST (Valmiki / Boya)</option>
-                    <option>ST (Gadaba)</option>
-                    <option>ST (Hill Reddi)</option>
-                    <option>ST (Kolam)</option>
-                    <option>ST (Thoti)</option>
-                    <option>ST (Porja)</option>
-                    <option>ST (Bagata)</option>
-                    <option>ST (Andh)</option>
-                    <option>OC (OC)</option>
+                    <option>Goud</option>
+                    <option>Besta – Fishermen</option>
+                    <option>Yadav / Golla</option>
+                    <option>Mudiraj / Mutrasi</option>
+                    <option>Kamma</option>
+                    <option>Reddy</option>
+                    <option>Velama</option>
+                    <option>Muslim</option>
+                    <option>Madiga (Hindu)</option>
+                    <option>Madiga (Christian)</option>
+                    <option>Mala (Hindu)</option>
+                    <option>Mala (Christian)</option>
+                    <option>Rajaka</option>
+                    <option>Komatala / Vysya</option>
+                    <option>Perika</option>
+                    <option>Mangali</option>
+                    <option>Padmashali</option>
+                    <option>Munnur Kapu</option>
+                    <option>Kurma</option>
                   </select>
                 </div>
               </div>
               <div className="sm:col-span-2">
-                <Button type="submit" className="w-full h-full bg-[#E91E63] hover:bg-[#FF4081] text-white rounded-md">
+                {/* <Button type="submit" className="w-full h-full bg-[#E91E63] hover:bg-[#FF4081] text-white rounded-md"  onClick={() => {
+    const section = document.getElementById("profiles-section");
+    section?.scrollIntoView({ behavior: "smooth" });
+  }}>
                   <Search className="mr-1 h-4 w-4" />
                   Let's Begin
-                </Button>
+                </Button> */}
+                <Button
+  type="submit"
+  className="w-full h-full bg-[#E91E63] hover:bg-[#FF4081] text-white rounded-md"
+  onClick={() => {
+    const section = document.getElementById("profiles-section");
+    if (section) {
+      const offset = 50; // Adjust this number manually (try 100–200)
+      const sectionTop = section.getBoundingClientRect().top + window.scrollY - offset;
+
+      window.scrollTo({
+        top: sectionTop,
+        behavior: "smooth",
+      });
+    }
+  }}
+>
+  <Search className="mr-1 h-4 w-4" />
+  Let's Begin
+</Button>
+
               </div>
             </div>
           </form>
