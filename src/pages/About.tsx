@@ -1,6 +1,10 @@
 import { useEffect } from 'react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
+import ownerprofile  from  '../assets/ownerprofile.jpeg'
+import userphoto from '../assets/userphoto.jpeg'
+import license from '../assets/license.jpeg'
+import profilebanner from '../assets/profilebanner.jpeg'
 
 const About = () => {
   useEffect(() => {
@@ -20,7 +24,7 @@ const About = () => {
           {/* Introduction */}
           <div className="mb-12">
             <p className="text-lg leading-relaxed text-gray-700">
-              KSR Matrimony is one of India's leading matrimonial services, dedicated to helping individuals find their perfect life partner. Founded in 2005, we have successfully connected thousands of couples who are now enjoying happy marriages.
+              KSR Matrimony is one of India's leading matrimonial services, dedicated to helping individuals find their perfect life partner. Founded in 2012, we have successfully connected thousands of couples who are now enjoying happy marriages.
             </p>
           </div>
           
@@ -48,17 +52,18 @@ const About = () => {
               <div className="grid grid-cols-1 md:grid-cols-2">
                 <div className="h-64 md:h-auto">
                   <img 
-                    src="https://images.unsplash.com/photo-1507608869274-d3177c8bb4c7?q=80&w=2940&auto=format&fit=crop" 
+                    // src="https://images.unsplash.com/photo-1507608869274-d3177c8bb4c7?q=80&w=2940&auto=format&fit=crop" 
+                    src={ownerprofile}
                     alt="KSR Matrimony Office" 
                     className="w-full h-full object-cover"
                   />
                 </div>
-                <div className="p-6">
+                <div className="p-6 mt-20">
                   <p className="text-gray-700">
-                    KSR Matrimony was founded by K.S. Ranganathan in 2005 with a simple mission - to help people find compatible life partners while respecting their cultural values and preferences.
+                    KSR Matrimony was founded by Kasu Srinivas Reddy in 2012 with a simple mission - to help people find compatible life partners while respecting their cultural values and preferences.
                   </p>
                   <p className="text-gray-700 mt-4">
-                    What started as a small matchmaking service in Chennai has now grown into one of the most trusted matrimonial platforms in India, connecting thousands of singles across different religions, castes, and communities.
+                    What started as a small matchmaking service in Warangal has now grown into one of the most trusted matrimonial platforms in India, connecting thousands of singles across different religions, castes, and communities.
                   </p>
                 </div>
               </div>
@@ -92,47 +97,60 @@ const About = () => {
             </div>
           </div>
           
-          {/* Team */}
+         
           <div>
             <h2 className="text-3xl font-semibold mb-6 text-[#E91E63]">Our Team</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               <div className="bg-white rounded-lg overflow-hidden shadow-md">
                 <img 
-                  src="https://images.unsplash.com/photo-1564564321837-a57b7070ac4f?q=80&w=2952&auto=format&fit=crop" 
-                  alt="K.S. Ranganathan" 
+                  // src="https://images.unsplash.com/photo-1564564321837-a57b7070ac4f?q=80&w=2952&auto=format&fit=crop" 
+                  src={userphoto}
+                  alt="Kasu Srinivas Reddy" 
                   className="w-full h-48 object-cover"
                 />
                 <div className="p-4">
-                  <h3 className="text-xl font-semibold">K.S. Ranganathan</h3>
+                  <h3 className="text-xl font-semibold">Kasu Srinivas Reddy</h3>
                   <p className="text-[#00bcd4]">Founder & CEO</p>
                 </div>
               </div>
               
               <div className="bg-white rounded-lg overflow-hidden shadow-md">
                 <img 
-                  src="https://images.unsplash.com/photo-1580489944761-15a19d654956?q=80&w=2961&auto=format&fit=crop" 
+                  // src="https://images.unsplash.com/photo-1580489944761-15a19d654956?q=80&w=2961&auto=format&fit=crop" 
+                  src={profilebanner}
                   alt="Priya Sharma" 
                   className="w-full h-48 object-cover"
                 />
-                <div className="p-4">
+                {/* <div className="p-4">
                   <h3 className="text-xl font-semibold">Priya Sharma</h3>
                   <p className="text-[#00bcd4]">Chief Matchmaker</p>
+                </div> */}
+                 <div className="p-4">
+                  <h3 className="text-xl font-semibold">Kasu Srinivas Reddy</h3>
+                  <p className="text-[#00bcd4]">Founder & CEO</p>
                 </div>
               </div>
               
               <div className="bg-white rounded-lg overflow-hidden shadow-md">
                 <img 
-                  src="https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=2874&auto=format&fit=crop" 
+                  // src="https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=2874&auto=format&fit=crop" 
+                  src = {license}
                   alt="Raj Kumar" 
                   className="w-full h-48 object-cover"
                 />
-                <div className="p-4">
+                {/* <div className="p-4">
                   <h3 className="text-xl font-semibold">Raj Kumar</h3>
                   <p className="text-[#00bcd4]">Customer Success Manager</p>
+                </div> */}
+                 <div className="p-4">
+                  <h3 className="text-xl font-semibold">Kasu Srinivas Reddy</h3>
+                  <p className="text-[#00bcd4]">Founder & CEO</p>
                 </div>
               </div>
             </div>
           </div>
+
+          
         </div>
       </div>
       

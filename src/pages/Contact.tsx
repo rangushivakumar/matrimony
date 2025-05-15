@@ -40,10 +40,10 @@ const Contact = () => {
               />
             </div>
             <div className="p-6 text-center">
-              <h3 className="text-xl font-semibold mb-2">KSR Matrimony Headquarters</h3>
+              <h3 className="text-xl font-semibold mb-2">KSR Matrimony Office Address</h3>
               <p className="text-gray-700">
-                KSR Tower, 123 Main Street<br />
-                Chennai, Tamil Nadu 600001<br />
+                న్యూ బస్టాండ్ రోడ్ పద్మాక్షి సర్కిల్ హనుమాన్ గుడి బ్యాక్ సైడ్ house no 6-2-324 na Machilibazar<br />
+                Warangal, Telangana<br />
                 India
               </p>
               <p className="mt-4 text-gray-700">

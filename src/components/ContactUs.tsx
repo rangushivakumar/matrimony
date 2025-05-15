@@ -250,7 +250,7 @@ const ContactUs = () => {
                   </div>
                   <div>
                     <p className="font-medium">Phone</p>
-                    <p className="text-gray-600">+91 98765 43210</p>
+                    <p className="text-gray-600">+91 7075929888</p>
                   </div>
                 </div>
                 
@@ -260,7 +260,7 @@ const ContactUs = () => {
                   </div>
                   <div>
                     <p className="font-medium">Email</p>
-                    <p className="text-gray-600">contact@ksrmatrimony.com</p>
+                    <p className="text-gray-600">ksrservices7@gmail.com </p>
                   </div>
                 </div>
                 
@@ -270,7 +270,7 @@ const ContactUs = () => {
                   </div>
                   <div>
                     <p className="font-medium">Instagram</p>
-                    <p className="text-gray-600">@ksrmatrimony</p>
+                    <p className="text-gray-600">@srinivarreddykasu</p>
                   </div>
                 </div>
               </div>

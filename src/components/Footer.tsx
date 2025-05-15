@@ -56,7 +56,7 @@ const Footer = () => {
               </li>
               <li className="pt-2 flex space-x-4">
                 <a 
-                  href="https://instagram.com" 
+                  href="https://www.instagram.com/srinivarreddykasu?igsh=MnB5dnphenNjZm5l&utm_source=qr" 
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="text-gray-500 hover:text-primary transition-colors"
@@ -64,7 +64,7 @@ const Footer = () => {
                   <Instagram size={18} />
                 </a>
                 <a 
-                  href="https://facebook.com" 
+                  href="https://www.facebook.com/share/1APYhTr4dW/?mibextid=wwXIfr" 
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="text-gray-500 hover:text-primary transition-colors"
@@ -101,16 +101,17 @@ const Footer = () => {
             <ul className="space-y-4">
               <li className="flex items-center">
                 <Phone size={18} className="text-primary mr-2" />
-                <span className="text-gray-600">+91 98765 43210</span>
+                <span className="text-gray-600">+91 7075929888</span>
               </li>
               <li className="flex items-center">
                 <Mail size={18} className="text-primary mr-2" />
-                <span className="text-gray-600">contact@ksrmatrimony.com</span>
+                <span className="text-gray-600">ksrservices7@gmail.com </span>
               </li>
               <li className="text-gray-600">
-                KSR Tower, 123 Main Street
+                న్యూ బస్టాండ్ రోడ్ 
+                పద్మాక్షి సర్కిల్ హనుమాన్ గుడి బ్యాక్ సైడ్ 
                 <br />
-                Chennai, Tamil Nadu 600001
+                house no 6-2-324 na Machilibazar
               </li>
             </ul>
           </div>

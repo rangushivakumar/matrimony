@@ -6,6 +6,7 @@ import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { getAuth, onAuthStateChanged } from "firebase/auth";
 import { app } from "@/config/firebaseConfig";
+import WhatsAppButton from "./components/WhatsAppButton";
 
 import Index from "./pages/Index";
 import About from "./pages/About";
@@ -125,6 +126,7 @@ const App = () => {
             <Route path="*" element={<NotFound />} />
           </Routes>
         </BrowserRouter>
+        <WhatsAppButton />
       </TooltipProvider>
     </QueryClientProvider>
   );
