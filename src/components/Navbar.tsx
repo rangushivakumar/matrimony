@@ -102,11 +102,15 @@ const Navbar = () => {
     >
       <div className="container mx-auto flex items-center justify-between">
         <Link to="/" className="flex items-center space-x-2">
-          <img
+          {/* <img
             src={ksrlogo}
             alt="KSR Matrimony Logo"
             className="h-12 w-auto object-contain"
-          />
+          /> */}
+          <span className="text-xl font-bold">
+            <span className="text-[#00bcd4]">Matri</span>
+            <span className="text-[#E91E63]">mony</span>
+          </span>
         </Link>
 
         {/* Mobile Menu Button */}
@@ -165,9 +169,8 @@ const Navbar = () => {
 
         {/* Mobile Navigation Menu */}
         <div
-          className={`fixed top-[72px] left-0 w-full bg-white shadow-lg transition-transform duration-300 ease-in-out transform ${
-            isMenuOpen ? 'translate-x-0' : '-translate-x-full'
-          } md:hidden z-50`}
+          className={`fixed top-[72px] left-0 w-full bg-white shadow-lg transition-transform duration-300 ease-in-out transform ${isMenuOpen ? 'translate-x-0' : '-translate-x-full'
+            } md:hidden z-50`}
           style={{ maxHeight: 'calc(100vh - 72px)', overflowY: 'auto' }}
         >
           <div className="flex flex-col p-4 space-y-4">
