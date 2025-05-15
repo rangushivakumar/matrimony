@@ -6,12 +6,12 @@ import { getAuth, GoogleAuthProvider } from "firebase/auth";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyCCAWHNusZ27cFT2AsNnnuLWZWzihjOA0s",
-  authDomain: "ksrmatrimony-f27f6.firebaseapp.com",
-  projectId: "ksrmatrimony-f27f6",
-  storageBucket: "ksrmatrimony-f27f6.firebasestorage.app",
-  messagingSenderId: "962408006002",
-  appId: "1:962408006002:web:303f633df7889896f51deb"
+  apiKey: "AIzaSyC7MapQk9aFUgKRxLjLYSycKfoEwlsoVlk",
+  authDomain: "matrimony-bfde5.firebaseapp.com",
+  projectId: "matrimony-bfde5",
+  storageBucket: "matrimony-bfde5.firebasestorage.app",
+  messagingSenderId: "612791798489",
+  appId: "1:612791798489:web:5abc6ba28f58f8e65c4cc8"
 };
 
 // Initialize Firebase

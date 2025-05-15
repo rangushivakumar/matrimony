@@ -15,27 +15,27 @@ const Index = () => {
   const auth = getAuth();
   const { toast } = useToast();
 
-  useEffect(() => {
-    const checkCasteData = async () => {
-      const user = auth.currentUser;
-      if (!user) return;
+  // useEffect(() => {
+  //   const checkCasteData = async () => {
+  //     const user = auth.currentUser;
+  //     if (!user) return;
 
-      try {
-        const response = await fetch(`https://apimatrimony.lytortech.com/api/caste/get/${user.uid}`);
-        const data = await response.json();
+  //     try {
+  //       const response = await fetch(`https://apimatrimony.lytortech.com/api/caste/get/${user.uid}`);
+  //       const data = await response.json();
 
-        // If no caste data or error in response, show the community selection modal
-        if (!data || !data.uid || !data.caste) {
-          setShowCommunityModal(true);
-        }
-      } catch (error) {
-        console.error('Error fetching caste data:', error);
-        setShowCommunityModal(true);
-      }
-    };
+  //       // If no caste data or error in response, show the community selection modal
+  //       if (!data || !data.uid || !data.caste) {
+  //         setShowCommunityModal(true);
+  //       }
+  //     } catch (error) {
+  //       console.error('Error fetching caste data:', error);
+  //       setShowCommunityModal(true);
+  //     }
+  //   };
 
-    checkCasteData();
-  }, [auth]);
+  //   checkCasteData();
+  // }, [auth]);
 
   return (
     <div className="min-h-screen bg-white">
@@ -51,13 +51,13 @@ const Index = () => {
       </main>
       <Footer />
 
-      {auth.currentUser && (
+      {/* {auth.currentUser && (
         <CommunitySelectModal
           isOpen={showCommunityModal}
           onClose={() => setShowCommunityModal(false)}
           uid={auth.currentUser.uid}
         />
-      )}
+      )} */}
     </div>
   );
 };
