@@ -110,6 +110,7 @@ const App = () => {
         <Toaster />
         <Sonner />
         <BrowserRouter>
+          <WhatsAppButton />
           <Routes>
             {/* Public routes that don't require authentication */}
             <Route path="/login" element={<PublicRoute><Login /></PublicRoute>} />
@@ -126,7 +127,6 @@ const App = () => {
             <Route path="*" element={<NotFound />} />
           </Routes>
         </BrowserRouter>
-        <WhatsAppButton />
       </TooltipProvider>
     </QueryClientProvider>
   );

@@ -1,13 +1,21 @@
 import React from 'react';
+import { useLocation } from 'react-router-dom';
 import './WhatsAppButton.css';
 
 const WhatsAppButton: React.FC = () => {
+  const location = useLocation();
+  const isLoginPage = location.pathname === '/login';
+
   const handleWhatsAppClick = () => {
     const phoneNumber = '917075929888';
     const message = encodeURIComponent("Hello, I'm interested in knowing more about your matrimony services. Could you please help me with the registration process and available matches? Thank you!");
     const whatsappUrl = `https://wa.me/${phoneNumber}?text=${message}`;
     window.open(whatsappUrl, '_blank');
   };
+
+  if (isLoginPage) {
+    return null;
+  }
 
   return (
     <div className="whatsapp-button" onClick={handleWhatsAppClick}>

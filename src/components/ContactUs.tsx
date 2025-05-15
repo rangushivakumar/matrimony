@@ -270,7 +270,7 @@ const ContactUs = () => {
                   </div>
                   <div>
                     <p className="font-medium">Instagram</p>
-                    <p className="text-gray-600">@srinivarreddykasu</p>
+                    <p className="text-gray-600">@srinivasrreddykasu</p>
                   </div>
                 </div>
               </div>
