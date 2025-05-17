@@ -237,8 +237,8 @@ const ContactUs = () => {
                 <div className="space-y-2">
                   <Label htmlFor="email">Email</Label>
                   <Input 
-                    id="email"
-                    name="email"
+                    id="mail"
+                    name="mail"
                     placeholder="Enter your email"
                     value={formData.mail}
                     onChange={handleChange}
