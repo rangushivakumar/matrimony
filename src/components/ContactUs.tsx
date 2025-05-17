@@ -18,7 +18,7 @@ const ContactUs = () => {
     gender: '',
     caste: '',
     message: '',
-    email: '',
+    mail: '',
   });
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
@@ -41,7 +41,7 @@ const ContactUs = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     
-    if (!formData.name || !formData.number || !formData.age || !formData.gender || !formData.caste || !formData.email) {
+    if (!formData.name || !formData.number || !formData.age || !formData.gender || !formData.caste || !formData.mail) {
       toast({
         title: "Missing Information",
         description: "Please fill all required fields",
@@ -95,7 +95,7 @@ const ContactUs = () => {
           gender: formData.gender,
           caste: formData.caste,
           message: formData.message,
-          email: formData.email
+          email: formData.mail
         }),
       });
 
@@ -116,7 +116,7 @@ const ContactUs = () => {
         gender: '',
         caste: '',
         message: '',
-        email: ''
+        mail: ''
       });
     } catch (error) {
       toast({
@@ -240,7 +240,7 @@ const ContactUs = () => {
                     id="email"
                     name="email"
                     placeholder="Enter your email"
-                    value={formData.email}
+                    value={formData.mail}
                     onChange={handleChange}
                     required
                     className="w-full"
