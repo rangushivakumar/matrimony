@@ -15,7 +15,7 @@ import Login from "./pages/Login";
 import SuccessStories from "./pages/SuccessStories";
 import Profiles from "./pages/Profiles";
 import NotFound from "./pages/NotFound";
-import MatchedProfiles from "./pages/MatchedProfiles";
+import MatchingProfiles from "./components/MatchingProfiles";
 
 const queryClient = new QueryClient();
 
@@ -121,7 +121,7 @@ const App = () => {
             <Route path="/" element={<ProtectedRoute><Index /></ProtectedRoute>} />
             <Route path="/success-stories" element={<ProtectedRoute><SuccessStories /></ProtectedRoute>} />
             <Route path="/profiles" element={<ProtectedRoute><Profiles /></ProtectedRoute>} />
-            <Route path="/matched-profiles" element={<ProtectedRoute><MatchedProfiles /></ProtectedRoute>} />
+            <Route path="/matching-profiles" element={<ProtectedRoute><MatchingProfiles /></ProtectedRoute>} />
             
             {/* 404 route */}
             <Route path="*" element={<NotFound />} />

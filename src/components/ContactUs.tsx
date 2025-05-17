@@ -18,6 +18,7 @@ const ContactUs = () => {
     gender: '',
     caste: '',
     message: '',
+    email: '',
   });
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
@@ -25,10 +26,22 @@ const ContactUs = () => {
     setFormData(prev => ({ ...prev, [name]: value }));
   };
 
+  const handlePhoneClick = () => {
+    window.location.href = 'tel:+917075929888';
+  };
+
+  const handleEmailClick = () => {
+    window.location.href = 'mailto:ksrservices7@gmail.com';
+  };
+
+  const handleInstagramClick = () => {
+    window.open('https://www.instagram.com/srinivasrreddykasu', '_blank');
+  };
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     
-    if (!formData.name || !formData.number || !formData.age || !formData.gender || !formData.caste) {
+    if (!formData.name || !formData.number || !formData.age || !formData.gender || !formData.caste || !formData.email) {
       toast({
         title: "Missing Information",
         description: "Please fill all required fields",
@@ -81,7 +94,8 @@ const ContactUs = () => {
           age: formData.age,
           gender: formData.gender,
           caste: formData.caste,
-          message: formData.message
+          message: formData.message,
+          email: formData.email
         }),
       });
 
@@ -101,7 +115,8 @@ const ContactUs = () => {
         age: '',
         gender: '',
         caste: '',
-        message: ''
+        message: '',
+        email: ''
       });
     } catch (error) {
       toast({
@@ -113,20 +128,20 @@ const ContactUs = () => {
   };
 
   return (
-    <section className="py-16 px-4 bg-gradient-to-r from-accent/30 to-primary/10" id="contact-us">
+    <section className="py-8 sm:py-16 px-4 bg-gradient-to-r from-accent/30 to-primary/10" id="contact-us">
       <div className="container mx-auto">
-        <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">
+        <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-center mb-8 sm:mb-12">
           <span className="text-primary">Contact</span> Us For <span className="text-secondary">Enquiry</span>
         </h2>
         
-        <div className="grid grid-cols-1 lg:grid-cols-5 gap-8 max-w-6xl mx-auto">
+        <div className="grid grid-cols-1 lg:grid-cols-5 gap-6 sm:gap-8 max-w-6xl mx-auto">
           {/* Contact Form */}
-          <div className="lg:col-span-3 bg-white p-8 rounded-lg shadow-md">
-            <h3 className="text-2xl font-semibold mb-6 text-secondary">Send us a message</h3>
+          <div className="lg:col-span-3 bg-white p-4 sm:p-8 rounded-lg shadow-md">
+            <h3 className="text-xl sm:text-2xl font-semibold mb-4 sm:mb-6 text-secondary">Send us a message</h3>
             
             <form onSubmit={handleSubmit}>
-              <div className="space-y-5">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+              <div className="space-y-4 sm:space-y-5">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-5">
                   <div className="space-y-2">
                     <Label htmlFor="name">Name</Label>
                     <Input 
@@ -136,6 +151,7 @@ const ContactUs = () => {
                       value={formData.name}
                       onChange={handleChange}
                       required
+                      className="w-full"
                     />
                   </div>
                   
@@ -148,11 +164,12 @@ const ContactUs = () => {
                       value={formData.number}
                       onChange={handleChange}
                       required
+                      className="w-full"
                     />
                   </div>
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-5">
                   <div className="space-y-2">
                     <Label htmlFor="age">Age</Label>
                     <Input 
@@ -163,6 +180,7 @@ const ContactUs = () => {
                       value={formData.age}
                       onChange={handleChange}
                       required
+                      className="w-full"
                     />
                   </div>
                   
@@ -215,6 +233,19 @@ const ContactUs = () => {
                     <option value="Kurma">Kurma</option>
                   </select>
                 </div>
+
+                <div className="space-y-2">
+                  <Label htmlFor="email">Email</Label>
+                  <Input 
+                    id="email"
+                    name="email"
+                    placeholder="Enter your email"
+                    value={formData.email}
+                    onChange={handleChange}
+                    required
+                    className="w-full"
+                  />
+                </div>
                 
                 <div className="space-y-2">
                   <Label htmlFor="message">Message (Optional)</Label>
@@ -225,12 +256,13 @@ const ContactUs = () => {
                     rows={5}
                     value={formData.message}
                     onChange={handleChange}
+                    className="w-full"
                   />
                 </div>
                 
                 <Button 
                   type="submit" 
-                  className="bg-primary hover:bg-primary/90 text-white w-full py-6 text-lg"
+                  className="bg-primary hover:bg-primary/90 text-white w-full py-4 sm:py-6 text-base sm:text-lg"
                 >
                   Send Message
                 </Button>
@@ -240,43 +272,52 @@ const ContactUs = () => {
           
           {/* Contact Information */}
           <div className="lg:col-span-2">
-            <div className="bg-white p-8 rounded-lg shadow-md mb-6">
-              <h3 className="text-2xl font-semibold mb-6 text-secondary">Get in touch</h3>
+            <div className="bg-white p-4 sm:p-8 rounded-lg shadow-md mb-6">
+              <h3 className="text-xl sm:text-2xl font-semibold mb-4 sm:mb-6 text-secondary">Get in touch</h3>
               
-              <div className="space-y-6">
-                <div className="flex items-center">
-                  <div className="flex items-center justify-center h-12 w-12 rounded-full bg-primary/10 text-primary mr-4">
-                    <Phone className="h-6 w-6" />
+              <div className="space-y-4 sm:space-y-6">
+                <button 
+                  onClick={handlePhoneClick}
+                  className="flex items-center w-full hover:bg-gray-50 p-2 rounded-lg transition-colors"
+                >
+                  <div className="flex items-center justify-center h-10 w-10 sm:h-12 sm:w-12 rounded-full bg-primary/10 text-primary mr-4">
+                    <Phone className="h-5 w-5 sm:h-6 sm:w-6" />
                   </div>
-                  <div>
+                  <div className="text-left">
                     <p className="font-medium">Phone</p>
                     <p className="text-gray-600">+91 7075929888</p>
                   </div>
-                </div>
+                </button>
                 
-                <div className="flex items-center">
-                  <div className="flex items-center justify-center h-12 w-12 rounded-full bg-primary/10 text-primary mr-4">
-                    <Mail className="h-6 w-6" />
+                <button 
+                  onClick={handleEmailClick}
+                  className="flex items-center w-full hover:bg-gray-50 p-2 rounded-lg transition-colors"
+                >
+                  <div className="flex items-center justify-center h-10 w-10 sm:h-12 sm:w-12 rounded-full bg-primary/10 text-primary mr-4">
+                    <Mail className="h-5 w-5 sm:h-6 sm:w-6" />
                   </div>
-                  <div>
+                  <div className="text-left">
                     <p className="font-medium">Email</p>
-                    <p className="text-gray-600">ksrservices7@gmail.com </p>
+                    <p className="text-gray-600">ksrservices7@gmail.com</p>
                   </div>
-                </div>
+                </button>
                 
-                <div className="flex items-center">
-                  <div className="flex items-center justify-center h-12 w-12 rounded-full bg-primary/10 text-primary mr-4">
-                    <Instagram className="h-6 w-6" />
+                <button 
+                  onClick={handleInstagramClick}
+                  className="flex items-center w-full hover:bg-gray-50 p-2 rounded-lg transition-colors"
+                >
+                  <div className="flex items-center justify-center h-10 w-10 sm:h-12 sm:w-12 rounded-full bg-primary/10 text-primary mr-4">
+                    <Instagram className="h-5 w-5 sm:h-6 sm:w-6" />
                   </div>
-                  <div>
+                  <div className="text-left">
                     <p className="font-medium">Instagram</p>
                     <p className="text-gray-600">@srinivasrreddykasu</p>
                   </div>
-                </div>
+                </button>
               </div>
             </div>
             
-            <p className="text-center text-gray-600">Our team is available to assist you every day from 9 AM to 8 PM</p>
+            <p className="text-center text-gray-600 text-sm sm:text-base">Our team is available to assist you every day from 9 AM to 8 PM</p>
           </div>
         </div>
       </div>
