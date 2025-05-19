@@ -40,7 +40,7 @@ const ContactUs = () => {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    
+
     if (!formData.name || !formData.number || !formData.age || !formData.gender || !formData.caste || !formData.mail) {
       toast({
         title: "Missing Information",
@@ -95,10 +95,10 @@ const ContactUs = () => {
           gender: formData.gender,
           caste: formData.caste,
           message: formData.message,
-          email: formData.mail
+          mail: formData.mail
         }),
       });
-
+      console.log(response,'--response ---')
       if (!response.ok) {
         throw new Error('Failed to submit form');
       }
@@ -107,7 +107,7 @@ const ContactUs = () => {
         title: "Form Submitted Successfully!",
         description: "We'll get back to you soon.",
       });
-      
+
       // Reset form
       setFormData({
         name: '',
@@ -133,34 +133,34 @@ const ContactUs = () => {
         <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-center mb-8 sm:mb-12">
           <span className="text-primary">Contact</span> Us For <span className="text-secondary">Enquiry</span>
         </h2>
-        
+
         <div className="grid grid-cols-1 lg:grid-cols-5 gap-6 sm:gap-8 max-w-6xl mx-auto">
           {/* Contact Form */}
           <div className="lg:col-span-3 bg-white p-4 sm:p-8 rounded-lg shadow-md">
             <h3 className="text-xl sm:text-2xl font-semibold mb-4 sm:mb-6 text-secondary">Send us a message</h3>
-            
+
             <form onSubmit={handleSubmit}>
               <div className="space-y-4 sm:space-y-5">
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-5">
                   <div className="space-y-2">
                     <Label htmlFor="name">Name</Label>
-                    <Input 
+                    <Input
                       id="name"
                       name="name"
-                      placeholder="Enter your name" 
+                      placeholder="Enter your name"
                       value={formData.name}
                       onChange={handleChange}
                       required
                       className="w-full"
                     />
                   </div>
-                  
+
                   <div className="space-y-2">
                     <Label htmlFor="number">Phone Number</Label>
-                    <Input 
+                    <Input
                       id="number"
                       name="number"
-                      placeholder="Enter your phone number" 
+                      placeholder="Enter your phone number"
                       value={formData.number}
                       onChange={handleChange}
                       required
@@ -172,18 +172,18 @@ const ContactUs = () => {
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-5">
                   <div className="space-y-2">
                     <Label htmlFor="age">Age</Label>
-                    <Input 
+                    <Input
                       id="age"
                       name="age"
                       type="number"
-                      placeholder="Enter your age" 
+                      placeholder="Enter your age"
                       value={formData.age}
                       onChange={handleChange}
                       required
                       className="w-full"
                     />
                   </div>
-                  
+
                   <div className="space-y-2">
                     <Label htmlFor="gender">Gender</Label>
                     <select
@@ -212,31 +212,32 @@ const ContactUs = () => {
                     required
                   >
                     <option value="">Select caste</option>
+                    <option value="Besta Fishermen">Besta Fishermen</option>
                     <option value="Goud">Goud</option>
-                    <option value="Besta">Besta – Fishermen</option>
-                    <option value="Yadav">Yadav / Golla</option>
-                    <option value="Mudiraj">Mudiraj / Mutrasi</option>
+                    <option value="Kurma">Kurma</option>
                     <option value="Kamma">Kamma</option>
+                    <option value="Komatala-Vysya">Komatala-Vysya</option>
+                    <option value="Madiga (Christian)">Madiga (Christian)</option>
+                    <option value="Madiga (Hindu)">Madiga (Hindu)</option>
+                    <option value="Mala (Christian)">Mala (Christian)</option>
+                    <option value="Mala (Hindu)">Mala (Hindu)</option>
+                    <option value="Mangali">Mangali</option>
+                    <option value="Mudiraj-Mutrasi">Mudiraj-Mutrasi</option>
+                    <option value="Munnur Kapu">Munnur Kapu</option>
+                    <option value="Padmashali">Padmashali</option>
+                    <option value="Perika">Perika</option>
+                    <option value="Rajaka">Rajaka</option>
                     <option value="Reddy">Reddy</option>
                     <option value="Velama">Velama</option>
+                    <option value="Yadav-Golla">Yadav-Golla</option>
                     <option value="Muslim">Muslim</option>
-                    <option value="Madiga Hindu">Madiga (Hindu)</option>
-                    <option value="Madiga Christian">Madiga (Christian)</option>
-                    <option value="Mala Hindu">Mala (Hindu)</option>
-                    <option value="Mala Christian">Mala (Christian)</option>
-                    <option value="Rajaka">Rajaka</option>
-                    <option value="Komatala">Komatala / Vysya</option>
-                    <option value="Perika">Perika</option>
-                    <option value="Mangali">Mangali</option>
-                    <option value="Padmashali">Padmashali</option>
-                    <option value="Munnur Kapu">Munnur Kapu</option>
-                    <option value="Kurma">Kurma</option>
+
                   </select>
                 </div>
 
                 <div className="space-y-2">
                   <Label htmlFor="email">Email</Label>
-                  <Input 
+                  <Input
                     id="mail"
                     name="mail"
                     placeholder="Enter your email"
@@ -246,22 +247,22 @@ const ContactUs = () => {
                     className="w-full"
                   />
                 </div>
-                
+
                 <div className="space-y-2">
                   <Label htmlFor="message">Message (Optional)</Label>
-                  <Textarea 
+                  <Textarea
                     id="message"
                     name="message"
-                    placeholder="How can we help you?" 
+                    placeholder="How can we help you?"
                     rows={5}
                     value={formData.message}
                     onChange={handleChange}
                     className="w-full"
                   />
                 </div>
-                
-                <Button 
-                  type="submit" 
+
+                <Button
+                  type="submit"
                   className="bg-primary hover:bg-primary/90 text-white w-full py-4 sm:py-6 text-base sm:text-lg"
                 >
                   Send Message
@@ -269,14 +270,14 @@ const ContactUs = () => {
               </div>
             </form>
           </div>
-          
+
           {/* Contact Information */}
           <div className="lg:col-span-2">
             <div className="bg-white p-4 sm:p-8 rounded-lg shadow-md mb-6">
               <h3 className="text-xl sm:text-2xl font-semibold mb-4 sm:mb-6 text-secondary">Get in touch</h3>
-              
+
               <div className="space-y-4 sm:space-y-6">
-                <button 
+                <button
                   onClick={handlePhoneClick}
                   className="flex items-center w-full hover:bg-gray-50 p-2 rounded-lg transition-colors"
                 >
@@ -288,8 +289,8 @@ const ContactUs = () => {
                     <p className="text-gray-600">+91 7075929888</p>
                   </div>
                 </button>
-                
-                <button 
+
+                <button
                   onClick={handleEmailClick}
                   className="flex items-center w-full hover:bg-gray-50 p-2 rounded-lg transition-colors"
                 >
@@ -301,8 +302,8 @@ const ContactUs = () => {
                     <p className="text-gray-600">ksrservices7@gmail.com</p>
                   </div>
                 </button>
-                
-                <button 
+
+                <button
                   onClick={handleInstagramClick}
                   className="flex items-center w-full hover:bg-gray-50 p-2 rounded-lg transition-colors"
                 >
@@ -316,7 +317,7 @@ const ContactUs = () => {
                 </button>
               </div>
             </div>
-            
+
             <p className="text-center text-gray-600 text-sm sm:text-base">Our team is available to assist you every day from 9 AM to 8 PM</p>
           </div>
         </div>

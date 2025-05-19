@@ -89,26 +89,27 @@ const CommunitySelectModal = ({ isOpen, onClose, uid }: CommunitySelectModalProp
                 <SelectValue placeholder="Select your community" />
               </SelectTrigger>
               <SelectContent className="max-h-[300px]">
+                <SelectItem value="Besta Fishermen">Besta Fishermen</SelectItem>
                 <SelectItem value="Goud">Goud</SelectItem>
-                <SelectItem value="Besta – Fishermen">Besta – Fishermen</SelectItem>
-                <SelectItem value="Yadav / Golla">Yadav / Golla</SelectItem>
-                <SelectItem value="Mudiraj / Mutrasi">Mudiraj / Mutrasi</SelectItem>
+                <SelectItem value="Kurma">Kurma</SelectItem>
                 <SelectItem value="Kamma">Kamma</SelectItem>
+                <SelectItem value="Komatala-Vysya">Komatala-Vysya</SelectItem>
+                <SelectItem value="Madiga (Christian)">Madiga (Christian)</SelectItem>
+                <SelectItem value="Madiga (Hindu)">Madiga (Hindu)</SelectItem>
+                <SelectItem value="Mala (Christian)">Mala (Christian)</SelectItem>
+                <SelectItem value="Mala (Hindu)">Mala (Hindu)</SelectItem>
+                <SelectItem value="Mangali">Mangali</SelectItem>
+                <SelectItem value="Mudiraj-Mutrasi">Mudiraj-Mutrasi</SelectItem>
+                <SelectItem value="Munnur Kapu">Munnur Kapu</SelectItem>
+                <SelectItem value="Padmashali">Padmashali</SelectItem>
+                <SelectItem value="Perika">Perika</SelectItem>
+                <SelectItem value="Rajaka">Rajaka</SelectItem>
                 <SelectItem value="Reddy">Reddy</SelectItem>
                 <SelectItem value="Velama">Velama</SelectItem>
+                <SelectItem value="Yadav-Golla">Yadav-Golla</SelectItem>
                 <SelectItem value="Muslim">Muslim</SelectItem>
-                <SelectItem value="Madiga (Hindu)">Madiga (Hindu)</SelectItem>
-                <SelectItem value="Madiga (Christian)">Madiga (Christian)</SelectItem>
-                <SelectItem value="Mala (Hindu)">Mala (Hindu)</SelectItem>
-                <SelectItem value="Mala (Christian)">Mala (Christian)</SelectItem>
-                <SelectItem value="Rajaka">Rajaka</SelectItem>
-                <SelectItem value="Komatala / Vysya">Komatala / Vysya</SelectItem>
-                <SelectItem value="Perika">Perika</SelectItem>
-                <SelectItem value="Mangali">Mangali</SelectItem>
-                <SelectItem value="Padmashali">Padmashali</SelectItem>
-                <SelectItem value="Munnur Kapu">Munnur Kapu</SelectItem>
-                <SelectItem value="Kurma">Kurma</SelectItem>
               </SelectContent>
+
 
             </Select>
           </div>

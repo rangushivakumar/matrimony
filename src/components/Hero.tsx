@@ -76,7 +76,7 @@ const Hero = () => {
 
 
 
-    {/* <div
+      {/* <div
       className="relative min-h-[94vh] bg-cover bg-center flex flex-col items-center justify-center overflow-hidden px-4 py-16 before:content-[''] before:absolute before:inset-0 before:bg-black/60"
       style={{
         backgroundImage: `url(${ksrbanner})`,
@@ -206,25 +206,26 @@ const Hero = () => {
                     value={searchCriteria.community}
                     onChange={handleInputChange}
                   >
+                    <option>Besta Fishermen</option>
                     <option>Goud</option>
-                    <option>Besta – Fishermen</option>
-                    <option>Yadav / Golla</option>
-                    <option>Mudiraj / Mutrasi</option>
+                    <option>Kurma</option>
                     <option>Kamma</option>
+                    <option>Komatala-Vysya</option>
+                    <option>Madiga (Christian)</option>
+                    <option>Madiga (Hindu)</option>
+                    <option>Mala (Christian)</option>
+                    <option>Mala (Hindu)</option>
+                    <option>Mangali</option>
+                    <option>Mudiraj-Mutrasi</option>
+                    <option>Munnur Kapu</option>
+                    <option>Padmashali</option>
+                    <option>Perika</option>
+                    <option>Rajaka</option>
                     <option>Reddy</option>
                     <option>Velama</option>
+                    <option>Yadav-Golla</option>
                     <option>Muslim</option>
-                    <option>Madiga (Hindu)</option>
-                    <option>Madiga (Christian)</option>
-                    <option>Mala (Hindu)</option>
-                    <option>Mala (Christian)</option>
-                    <option>Rajaka</option>
-                    <option>Komatala / Vysya</option>
-                    <option>Perika</option>
-                    <option>Mangali</option>
-                    <option>Padmashali</option>
-                    <option>Munnur Kapu</option>
-                    <option>Kurma</option>
+
                   </select>
                 </div>
               </div>
@@ -237,24 +238,24 @@ const Hero = () => {
                   Let's Begin
                 </Button> */}
                 <Button
-  type="submit"
-  className="w-full h-full bg-[#E91E63] hover:bg-[#FF4081] text-white rounded-md"
-  onClick={() => {
-    const section = document.getElementById("profiles-section");
-    if (section) {
-      const offset = 50; // Adjust this number manually (try 100–200)
-      const sectionTop = section.getBoundingClientRect().top + window.scrollY - offset;
+                  type="submit"
+                  className="w-full h-full bg-[#E91E63] hover:bg-[#FF4081] text-white rounded-md"
+                  onClick={() => {
+                    const section = document.getElementById("profiles-section");
+                    if (section) {
+                      const offset = 50; // Adjust this number manually (try 100–200)
+                      const sectionTop = section.getBoundingClientRect().top + window.scrollY - offset;
 
-      window.scrollTo({
-        top: sectionTop,
-        behavior: "smooth",
-      });
-    }
-  }}
->
-  <Search className="mr-1 h-4 w-4" />
-  Let's Begin
-</Button>
+                      window.scrollTo({
+                        top: sectionTop,
+                        behavior: "smooth",
+                      });
+                    }
+                  }}
+                >
+                  <Search className="mr-1 h-4 w-4" />
+                  Let's Begin
+                </Button>
 
               </div>
             </div>
