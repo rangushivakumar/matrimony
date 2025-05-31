@@ -30,6 +30,21 @@ const ProfileSection = () => {
   const auth = getAuth();
   const navigate = useNavigate();
 
+  const calculateAge = (dateOfBirth: string | null): number => {
+    if (!dateOfBirth) return 23;
+    
+    const today = new Date();
+    const birthDate = new Date(dateOfBirth);
+    let age = today.getFullYear() - birthDate.getFullYear();
+    const monthDiff = today.getMonth() - birthDate.getMonth();
+    
+    if (monthDiff < 0 || (monthDiff === 0 && today.getDate() < birthDate.getDate())) {
+      age--;
+    }
+    
+    return age;
+  };
+
   // Fallback profiles in case API fails
   const fallbackProfiles: Profile[] = [
     {
@@ -205,6 +220,12 @@ const ProfileSection = () => {
               </div>
               <CardContent className="p-6">
                 <div className="space-y-2">
+                  <div className="flex items-center text-gray-600 font-semibold">
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-2 text-[#ff5252]" viewBox="0 0 20 20" fill="currentColor">
+                      <path fillRule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clipRule="evenodd" />
+                    </svg>
+                    <span className="text-sm">KSR{profile.id}ID</span>
+                  </div>
                   <div className="flex items-center text-gray-600">
                     <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-2 text-[#ff5252]" viewBox="0 0 20 20" fill="currentColor">
                       <path fillRule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clipRule="evenodd" />
@@ -227,7 +248,7 @@ const ProfileSection = () => {
                     <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-2 text-[#ff5252]" viewBox="0 0 20 20" fill="currentColor">
                       <path fillRule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clipRule="evenodd" />
                     </svg>
-                    <span className="text-sm">{profile.dateOfBirth}</span>
+                    <span className="text-sm">{calculateAge(profile.dateOfBirth)} years</span>
                   </div>
                   <div className="flex items-center text-gray-600">
                     <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-2 text-[#ff5252]" viewBox="0 0 20 20" fill="currentColor">
