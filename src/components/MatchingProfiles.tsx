@@ -234,7 +234,7 @@ const MatchingProfiles = () => {
                     <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-2 text-[#ff5252]" viewBox="0 0 20 20" fill="currentColor">
                       <path fillRule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clipRule="evenodd" />
                     </svg>
-                    <span className="text-sm">KSR{profile.id}ID</span>
+                    <span className="text-sm">KSR00{profile.id}</span>
                   </div>
                   <div className="flex items-center text-gray-600">
                     <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-2 text-[#ff5252]" viewBox="0 0 20 20" fill="currentColor">
