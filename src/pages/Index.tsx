@@ -7,11 +7,11 @@ import ProfileSection from '@/components/ProfileSection';
 import RecentClients from '@/components/RecentClients';
 import WhyChooseUs from '@/components/WhyChooseUs';
 import Footer from '@/components/Footer';
-import CommunitySelectModal from '@/components/CommunitySelectModal';
+import ContactFormModal from '@/components/ContactFormModal';
 import { useToast } from '@/components/ui/use-toast';
 
 const Index = () => {
-  const [showCommunityModal, setShowCommunityModal] = useState(false);
+  const [showContactModal, setShowContactModal] = useState(false);
   const auth = getAuth();
   const { toast } = useToast();
 
@@ -24,13 +24,13 @@ const Index = () => {
         const response = await fetch(`https://apimatrimony.lytortech.com/api/caste/get/${user.uid}`);
         const data = await response.json();
 
-        // If no caste data or error in response, show the community selection modal
+        // If no caste data or error in response, show the contact form modal
         if (!data || !data.uid || !data.caste) {
-          setShowCommunityModal(true);
+          setShowContactModal(true);
         }
       } catch (error) {
         console.error('Error fetching caste data:', error);
-        setShowCommunityModal(true);
+        setShowContactModal(true);
       }
     };
 
@@ -52,9 +52,9 @@ const Index = () => {
       <Footer />
 
       {auth.currentUser && (
-        <CommunitySelectModal
-          isOpen={showCommunityModal}
-          onClose={() => setShowCommunityModal(false)}
+        <ContactFormModal
+          isOpen={showContactModal}
+          onClose={() => setShowContactModal(false)}
           uid={auth.currentUser.uid}
         />
       )}
