@@ -4,13 +4,14 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { useToast } from '@/components/ui/use-toast';
-import { Instagram, Phone, Mail } from "lucide-react";
+import { Instagram, Phone, Mail, Loader2 } from "lucide-react";
 import { getAuth } from 'firebase/auth';
 import { app } from '@/config/firebaseConfig';
 
 const ContactUs = () => {
   const { toast } = useToast();
   const auth = getAuth(app);
+  const [isLoading, setIsLoading] = useState(false);
   const [formData, setFormData] = useState({
     name: '',
     number: '',
@@ -40,6 +41,7 @@ const ContactUs = () => {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    setIsLoading(true);
 
     if (!formData.name || !formData.number || !formData.age || !formData.gender || !formData.caste || !formData.mail) {
       toast({
@@ -47,6 +49,7 @@ const ContactUs = () => {
         description: "Please fill all required fields",
         variant: "destructive"
       });
+      setIsLoading(false);
       return;
     }
 
@@ -57,6 +60,7 @@ const ContactUs = () => {
         description: "Please enter a valid 10-digit phone number",
         variant: "destructive"
       });
+      setIsLoading(false);
       return;
     }
 
@@ -68,6 +72,7 @@ const ContactUs = () => {
         description: "Age must be between 18 and 70",
         variant: "destructive"
       });
+      setIsLoading(false);
       return;
     }
 
@@ -79,6 +84,7 @@ const ContactUs = () => {
           description: "Please login to submit the form",
           variant: "destructive"
         });
+        setIsLoading(false);
         return;
       }
 
@@ -124,6 +130,8 @@ const ContactUs = () => {
         description: "Failed to submit form. Please try again.",
         variant: "destructive"
       });
+    } finally {
+      setIsLoading(false);
     }
   };
 
@@ -264,8 +272,16 @@ const ContactUs = () => {
                 <Button
                   type="submit"
                   className="bg-primary hover:bg-primary/90 text-white w-full py-4 sm:py-6 text-base sm:text-lg"
+                  disabled={isLoading}
                 >
-                  Send Message
+                  {isLoading ? (
+                    <>
+                      <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+                      Submitting...
+                    </>
+                  ) : (
+                    'Send Message'
+                  )}
                 </Button>
               </div>
             </form>

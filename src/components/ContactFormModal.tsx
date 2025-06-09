@@ -13,6 +13,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { getAuth } from 'firebase/auth';
 import { app } from '@/config/firebaseConfig';
+import { Loader2 } from 'lucide-react';
 
 interface ContactFormModalProps {
   isOpen: boolean;
@@ -23,6 +24,7 @@ interface ContactFormModalProps {
 const ContactFormModal = ({ isOpen, onClose, uid }: ContactFormModalProps) => {
   const { toast } = useToast();
   const auth = getAuth(app);
+  const [isLoading, setIsLoading] = useState(false);
   const [formData, setFormData] = useState({
     name: '',
     number: '',
@@ -40,6 +42,7 @@ const ContactFormModal = ({ isOpen, onClose, uid }: ContactFormModalProps) => {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    setIsLoading(true);
 
     if (!formData.name || !formData.number || !formData.age || !formData.gender || !formData.caste || !formData.mail) {
       toast({
@@ -47,6 +50,7 @@ const ContactFormModal = ({ isOpen, onClose, uid }: ContactFormModalProps) => {
         description: "Please fill all required fields",
         variant: "destructive"
       });
+      setIsLoading(false);
       return;
     }
 
@@ -57,6 +61,7 @@ const ContactFormModal = ({ isOpen, onClose, uid }: ContactFormModalProps) => {
         description: "Please enter a valid 10-digit phone number",
         variant: "destructive"
       });
+      setIsLoading(false);
       return;
     }
 
@@ -68,6 +73,7 @@ const ContactFormModal = ({ isOpen, onClose, uid }: ContactFormModalProps) => {
         description: "Age must be between 18 and 70",
         variant: "destructive"
       });
+      setIsLoading(false);
       return;
     }
 
@@ -121,6 +127,8 @@ const ContactFormModal = ({ isOpen, onClose, uid }: ContactFormModalProps) => {
         description: error.message || "Failed to save information",
         variant: "destructive",
       });
+    } finally {
+      setIsLoading(false);
     }
   };
 
@@ -257,8 +265,16 @@ const ContactFormModal = ({ isOpen, onClose, uid }: ContactFormModalProps) => {
           <Button
             type="submit"
             className="w-full h-10 text-base bg-[#00bcd4] hover:bg-[#00acc1] text-white mt-2"
+            disabled={isLoading}
           >
-            Complete Profile
+            {isLoading ? (
+              <>
+                <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+                Submitting...
+              </>
+            ) : (
+              'Complete Profile'
+            )}
           </Button>
         </form>
       </DialogContent>
